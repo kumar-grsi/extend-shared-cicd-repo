@@ -11,6 +11,7 @@ resources:
      name: kumar-grsi/shared-cicd-repo
      type: github
      ref: main
+     endpoint: github-login-kumar
       
 stages:
 - template: shared-pipelines.yml@templates
