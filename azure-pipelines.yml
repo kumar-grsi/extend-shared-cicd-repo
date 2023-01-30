@@ -1,0 +1,18 @@
+parameters:
+  - name: ProjectName
+    displayName: Project Name
+    type: string
+    default: Project1
+    values:
+      - Project1
+resources:
+ repositories:
+   - repository: shared-cicd-repo
+     name: kumar-grsi/shared-cicd-repo
+     type: git
+     ref: main
+      
+stages:
+- template: './shared-pipelines.yml@shared-cicd-repo'
+  parameters: 
+   ProjectName: ${{ parameters.ProjectName}}
