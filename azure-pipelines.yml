@@ -7,12 +7,12 @@ parameters:
       - Project1
 resources:
  repositories:
-   - repository: shared-cicd-repo
+   - repository: templates
      name: kumar-grsi/shared-cicd-repo
-     type: git
+     type: github
      ref: main
       
 stages:
-- template: './shared-pipelines.yml@shared-cicd-repo'
+- template: shared-pipelines.yml@templates
   parameters: 
    ProjectName: ${{ parameters.ProjectName}}
